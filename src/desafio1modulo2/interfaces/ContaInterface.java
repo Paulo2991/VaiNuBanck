@@ -6,5 +6,5 @@ public interface ContaInterface {
 	
 	void sacar(double valor);
 	double deposito(double valor);
-	double transferir(Conta conta,double valor);
+	void transferir(Conta conta,double valor);
 }

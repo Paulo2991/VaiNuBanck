@@ -62,7 +62,7 @@ public abstract class Conta implements ContaInterface{
 		return valor;
 	}
 	
-	public double transferir(Conta conta,double valor) {
+	public void transferir(Conta conta,double valor) {
 		if(saldo >= valor && valor >= 0) {
 			sacar(valor);
 			conta.deposito(valor);
@@ -70,7 +70,6 @@ public abstract class Conta implements ContaInterface{
 		}else {
 			System.out.println("Transferencia não autorizada:");
 		}
-		return saldo;
 	}
 	
 	public void visualizarConta() {

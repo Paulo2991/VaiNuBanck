@@ -23,9 +23,9 @@ public class ContaPoupanca extends Conta{
 
 	public void sacar(double valor) {
 		if(getSaldo() >= valor) {
-			setSaldo(getSaldo() - valor);
 			double juros = valor * JUROSAPLICADOS;
-			System.out.println("O saque é : " + getSaldo() + "mais os juros aplicados de: " + juros);
+			setSaldo(getSaldo() - valor - (valor - juros));
+			System.out.println("O saque é : " + getSaldo() + " mais os juros aplicados de: " + juros);
 		}else {
 			throw new ValorInvalidoException("Saldo Insuficiênte.");
 		}
@@ -36,9 +36,8 @@ public class ContaPoupanca extends Conta{
 		return valor;
 	}
 	
-	public double tranferir(Conta conta,double valor) {
+	public void transferir(Conta conta,double valor) {
 		super.transferir(conta,valor);
-		return valor;
 	}
 	
 	public void visualizarConta() {

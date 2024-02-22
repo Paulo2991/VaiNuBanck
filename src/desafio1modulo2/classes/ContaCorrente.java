@@ -36,9 +36,8 @@ public class ContaCorrente extends Conta{
 	}
 	
 	@Override
-	public double transferir(Conta conta,double valor) {
+	public void transferir(Conta conta,double valor) {
 		super.transferir(conta,valor);
-		return valor;
 	}
 	
 	public void visualizarConta() {
