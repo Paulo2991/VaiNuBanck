@@ -110,17 +110,13 @@ public class Banco {
 		return null;
 	}
 	
-	public List<Conta> visualizarConta(){
-		for(int i = 0; i < contas.size(); i++) {
-			if(contas.get(i) != null) {
-				Conta conta = pesquisarConta(contas.get(i).getNumero());
+	public void visualizarConta(){
+		for(Conta conta : contas) {
+			if(conta != null) {
 				conta.visualizarConta();
-				return contas;
 			}
 		}
-		
 		System.out.println("Conta não cadastrada:");
-		return null;
 	}
 	
 	public void acessarConta() {
@@ -131,6 +127,7 @@ public class Banco {
         Conta conta = pesquisarConta(numeroConta);
         if(conta != null) {
         	do {
+    			System.out.println("Informe qual opção do menu desejar: ");
             	System.out.println("1 - Sacar: ");
         		System.out.println("2 - Depositar: ");
         		System.out.println("3 - Transferir: ");

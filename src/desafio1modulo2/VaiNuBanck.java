@@ -21,7 +21,8 @@ public class VaiNuBanck {
 			System.out.println("4 - Listar Contas: ");
 			System.out.println("5 - Excluir Contas: ");
 			System.out.println("6 - Alterar Contas: ");
-			System.out.println("7 - Sair Menu: ");
+			System.out.println("7 - Pesquisar Conta Por Numero: ");
+			System.out.println("8 - Sair Menu: ");
 			op = entrada.nextInt();
 			switch (op) {
 			case 1:
@@ -75,12 +76,17 @@ public class VaiNuBanck {
 				banco.editarConta(numeroConta);
 				break;
 			case 7:
+				System.out.println("Informe o numero da conta: ");
+				numeroConta = entrada.nextInt();
+				banco.pesquisarConta(numeroConta);
+				break;
+			case 8:
 				System.out.println("Saindo do menu:");
 				break;
 			default:
 				throw new IllegalArgumentException("Opção Invalida ");
 			}
-		}while(op != 7);
+		}while(op != 8);
 	}
 
 }
